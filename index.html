@@ -419,10 +419,132 @@
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  @media (max-width: 860px) {
-    .container { grid-template-columns: 1fr; }
+  /* ---------- Responsive ---------- */
+
+  /* Tablet & smaller laptops */
+  @media (max-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr;
+      max-width: 720px;
+      gap: 20px;
+    }
+    h1 { font-size: 46px; }
+  }
+
+  /* Standard tablets / large phones */
+  @media (max-width: 768px) {
+    .lang-toggle { top: 16px; right: 16px; }
+    .lang-toggle button { padding: 5px 12px; font-size: 13px; }
+    header.hero { padding: 70px 18px 30px; }
+    .pill { font-size: 11px; letter-spacing: 2px; padding: 5px 14px; margin-bottom: 18px; }
     h1 { font-size: 38px; }
-    header.hero { padding-top: 60px; }
+    .sub { font-size: 15px; margin-top: 14px; }
+    .info-row { gap: 10px; margin-top: 22px; }
+    .info-pill { padding: 8px 16px; font-size: 13px; }
+    .container { padding: 0 16px; margin: 20px auto 40px; }
+    .card { padding: 22px 20px; border-radius: 12px; }
+    .card h2 { font-size: 19px; margin-bottom: 16px; }
+    .timezone { padding: 10px 14px; font-size: 13px; }
+    .month-name { font-size: 17px; }
+    .days .day { padding: 12px 0 16px; font-size: 15px; }
+    .slots { grid-template-columns: repeat(auto-fill, minmax(95px, 1fr)); }
+    .platform { padding: 12px; }
+    .platform-icon { width: 40px; height: 40px; font-size: 18px; }
+    .platform-name { font-size: 15px; }
+    .platform-detail { font-size: 12px; }
+  }
+
+  /* Phones */
+  @media (max-width: 540px) {
+    .lang-toggle {
+      position: relative;
+      top: auto;
+      right: auto;
+      justify-content: center;
+      padding: 14px 0 0;
+    }
+    header.hero { padding: 24px 14px 26px; }
+    .pill {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      padding: 5px 12px;
+      margin-bottom: 14px;
+    }
+    h1 { font-size: 30px; line-height: 1.15; }
+    h1 .accent { font-size: 28px; }
+    .sub { font-size: 14px; margin-top: 12px; }
+    .info-row { flex-direction: column; align-items: center; gap: 8px; }
+    .info-pill { width: 100%; max-width: 320px; text-align: center; }
+    .divider { margin-top: 26px; }
+
+    .container { padding: 0 12px; margin: 16px auto 30px; gap: 16px; }
+    .card { padding: 18px 16px; border-radius: 10px; }
+    .card h2 { font-size: 17px; margin-bottom: 14px; }
+
+    .timezone {
+      flex-wrap: wrap;
+      font-size: 12px;
+      gap: 6px;
+      padding: 10px 12px;
+    }
+    .month-nav { padding: 6px 0; }
+    .month-name { font-size: 16px; }
+    .month-nav button { font-size: 20px; padding: 4px 10px; }
+    .weekdays { font-size: 10px; letter-spacing: 1px; padding: 10px 0 6px; }
+    .days .day { padding: 10px 0 14px; font-size: 13px; border-radius: 6px; }
+    .days .day.available::after { width: 4px; height: 4px; bottom: 4px; }
+
+    .time-section { padding: 22px 0 8px; margin-top: 22px; }
+    .time-section .empty-icon { font-size: 32px; }
+    .time-section .empty-text { font-size: 16px; }
+    .slots {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .slot { padding: 10px 0; font-size: 13px; }
+
+    .platform { padding: 10px; gap: 10px; }
+    .platform-icon { width: 38px; height: 38px; font-size: 17px; border-radius: 10px; }
+    .platform-name { font-size: 14px; }
+    .platform-detail { font-size: 11px; }
+    .radio-circle { width: 18px; height: 18px; }
+    .platform.selected .radio-circle::after {
+      top: 2px; left: 2px; width: 10px; height: 10px;
+    }
+
+    .summary-empty { padding: 16px; font-size: 13px; }
+    .summary-row { font-size: 13px; padding: 6px 0; }
+
+    label.field-label {
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      margin-top: 14px;
+    }
+    /* 16px input font prevents iOS auto-zoom */
+    input, textarea { padding: 11px 12px; font-size: 16px; }
+    textarea { min-height: 70px; }
+
+    .confirm-btn { padding: 14px; font-size: 15px; margin-top: 18px; }
+    .form-message { font-size: 13px; padding: 12px 14px; }
+
+    footer { padding: 22px 14px 36px; font-size: 12px; }
+
+    .toast {
+      top: 16px;
+      padding: 12px 20px;
+      font-size: 13px;
+      max-width: 90%;
+      text-align: center;
+    }
+  }
+
+  /* Very small phones (≤360px) */
+  @media (max-width: 360px) {
+    h1 { font-size: 26px; }
+    h1 .accent { font-size: 24px; }
+    .slots { grid-template-columns: repeat(2, 1fr); }
+    .days .day { padding: 8px 0 12px; font-size: 12px; }
+    .card { padding: 16px 14px; }
   }
 </style>
 </head>
